@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{664E8FB2-6FC0-4BB8-A4F7-88A52E02F9A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TerraCore</RootNamespace>
+    <AssemblyName>TerraCore</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Lib.Harmony.2.2.1\lib\net472\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp_public_1.3">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp_public_1.3.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BiomeWorkers\BiomeDefExtension.cs" />
+    <Compile Include="DefOfs\BiomeDefOf.cs" />
+    <Compile Include="BiomeWorkers\BiomeWorkerSpecial.cs" />
+    <Compile Include="BiomeWorkers\BiomeWorkerSpecial_Archipelago.cs" />
+    <Compile Include="BiomeWorkers\BiomeWorkerSpecial_Atoll.cs" />
+    <Compile Include="BiomeWorkers\BiomeWorkerSpecial_CaveEntrance.cs" />
+    <Compile Include="BiomeWorkers\BiomeWorkerSpecial_CaveOasis.cs" />
+    <Compile Include="BiomeWorkers\BiomeWorkerSpecial_DeepRavine.cs" />
+    <Compile Include="BiomeWorkers\BiomeWorkerSpecial_InfestedMountains.cs" />
+    <Compile Include="BiomeWorkers\BiomeWorkerSpecial_Oasis.cs" />
+    <Compile Include="BiomeWorkers\BiomeWorkerSpecial_SpikeMountains.cs" />
+    <Compile Include="BiomeWorkers\BiomeWorkerSpecial_TundraSkerries.cs" />
+    <Compile Include="BiomeWorkers\BiomeWorkerSpecial_TunnelworldCave.cs" />
+    <Compile Include="BiomeWorkers\BiomeWorkerSpecial_VolcanicIsland.cs" />
+    <Compile Include="BiomeWorkers\BiomeWorker_DesertHighPlains.cs" />
+    <Compile Include="BiomeWorkers\BiomeWorker_Empty.cs" />
+    <Compile Include="BiomeWorkers\BiomeWorker_Savanna.cs" />
+    <None Include="Harmony\Harmony_WorldLayer_Hills_Regenerate.cs" />
+    <Compile Include="Harmony\Harmony_WorldGenStep_Terrain_GenerateTileFor.cs" />
+    <Compile Include="Harmony\Harmony_World_HasCaves.cs" />
+    <Compile Include="Harmony\Harmony_World_CoastDirectionAt.cs" />
+    <Compile Include="Harmony\Harmony_TradeUtility_SpawnDropPod.cs" />
+    <Compile Include="Harmony\Harmony_ScenPart_PlayerPawnsArriveMethod_GenerateIntoMap.cs" />
+    <Compile Include="Harmony\Harmony_Room_PsychologicallyOutdoors.cs" />
+    <Compile Include="Harmony\Harmony_Room_OutdoorsForWork.cs" />
+    <Compile Include="Harmony\Harmony_RockNoises_Reset.cs" />
+    <Compile Include="Harmony\Harmony_RockNoises_Init.cs" />
+    <Compile Include="Harmony\Harmony_RiverMaker_ValidatePassage.cs" />
+    <Compile Include="Harmony\Harmony_RCellFinder_TryFindRandomPawnEntryCell.cs" />
+    <Compile Include="Harmony\Harmony_GenTemperature_GetTemperatureFromSeasonAtTile.cs" />
+    <Compile Include="Harmony\Harmony_GenStep_Terrain_TerrainFrom.cs" />
+    <Compile Include="Harmony\Harmony_GenStep_Terrain_Generate.cs" />
+    <Compile Include="Harmony\Harmony_GenStep_ScatterShrines_CanScatterAt.cs" />
+    <Compile Include="Harmony\Harmony_GenStep_ScatterRuinsSimple_CanScatterAt.cs" />
+    <Compile Include="Harmony\Harmony_GenStep_RoofCollapseUtility_WithinRangeOfRoofHolder.cs" />
+    <Compile Include="Harmony\Harmony_GenStep_RockChunks_Generate.cs" />
+    <Compile Include="Harmony\Harmony_GenStep_FindPlayerStartSpot_Generate.cs" />
+    <Compile Include="Harmony\Harmony_GenStep_CavesTerrain_Generate.cs" />
+    <Compile Include="Harmony\Harmony_GenStep_Caves_Generate.cs" />
+    <Compile Include="Harmony\Harmony_GenStep_CaveHives_TrySpawnHive.cs" />
+    <Compile Include="Harmony\Harmony_GenStep_CaveHives_Generate.cs" />
+    <Compile Include="Harmony\Harmony_DropPodUtility_DropThingGroupsNear.cs" />
+    <Compile Include="Harmony\Harmony_DropCellFinder_CanPhysicallyDropInto.cs" />
+    <Compile Include="Harmony\Harmony_Designator_ZoneAdd_Growing_CanDesignateCell.cs" />
+    <Compile Include="Harmony\Harmony_CachedTileTemperatureData_CalculateOutdoorTemperature.cs" />
+    <Compile Include="Utility\CurveAxis.cs" />
+    <Compile Include="Utility\ElevationLevel.cs" />
+    <Compile Include="Fertility\FertilityLevel.cs" />
+    <Compile Include="Fertility\FertilityLevelEnum.cs" />
+    <Compile Include="Fertility\FertilityLevelMinMaxEnum.cs" />
+    <Compile Include="Utility\FluidBodyType.cs" />
+    <Compile Include="Generation\GenFeatureTristate.cs" />
+    <Compile Include="Generation\GenRoof.cs" />
+    <Compile Include="Generation\GenStepCalculationType.cs" />
+    <Compile Include="Generation\GenStep_BetterCaves.cs" />
+    <Compile Include="Generation\GenStep_CaveRockChunks.cs" />
+    <Compile Include="Generation\GenStep_ElevationFertilityPost.cs" />
+    <Compile Include="Generation\GenWorldGen.cs" />
+    <Compile Include="Harmony\Harmony_BeachMaker_BeachTerrainAt.cs" />
+    <Compile Include="Utility\HiveOverwriteType.cs" />
+    <Compile Include="Noise\IslandNoises.cs" />
+    <Compile Include="Utility\Listing_StandardExtension.cs" />
+    <Compile Include="Generation\MapExtension.cs" />
+    <Compile Include="ModExtensions\ModExt_Biome_FeatureControl.cs" />
+    <Compile Include="ModExtensions\ModExt_Biome_GenStep_BetterCaves.cs" />
+    <Compile Include="ModExtensions\ModExt_Biome_GenStep_Islands.cs" />
+    <Compile Include="ModExtensions\ModExt_Biome_GenStep_Ravine.cs" />
+    <Compile Include="ModExtensions\ModExt_Biome_GenStep_Spikes.cs" />
+    <Compile Include="ModExtensions\ModExt_Biome_Replacement.cs" />
+    <Compile Include="ModExtensions\ModExt_Biome_Temperature.cs" />
+    <Compile Include="ModExtensions\ModExt_Buildable.cs" />
+    <Compile Include="ModExtensions\ModExt_Terrain.cs" />
+    <Compile Include="Moisture\MoistureLevel.cs" />
+    <Compile Include="Moisture\MoistureLevelEnum.cs" />
+    <Compile Include="Moisture\MoistureLevelMinMaxEnum.cs" />
+    <Compile Include="Utility\PlowLevel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Noise\RavineNoises.cs" />
+    <Compile Include="Utility\RockChunksOverwriteType.cs" />
+    <Compile Include="Utility\RoofDefOf.cs" />
+    <Compile Include="Utility\RoofOverwriteType.cs" />
+    <Compile Include="Utility\RoomCalculationType.cs" />
+    <Compile Include="Utility\RoomExtension.cs" />
+    <Compile Include="Utility\Rot4Utility.cs" />
+    <Compile Include="Utility\ScatterValidator_ExcludeBiomes.cs" />
+    <Compile Include="Noise\SpikeNoises.cs" />
+    <Compile Include="TerraCoreMod.cs" />
+    <Compile Include="TerraCoreSettings.cs" />
+    <Compile Include="DefOfs\TerrainDefOf.cs" />
+    <Compile Include="Utility\TerrainThresholdWEO.cs" />
+    <Compile Include="Utility\TileNeightborPredicate.cs" />
+    <Compile Include="Water\WaterLevel.cs" />
+    <Compile Include="Water\WaterLevelEnum.cs" />
+    <Compile Include="Water\WaterLevelMinMaxEnum.cs" />
+    <Compile Include="Utility\WLTileGraphicData.cs" />
+    <Compile Include="Generation\WorldGenStep_SpecialTerrain.cs" />
+    <Compile Include="Utility\WorldGridExtension.cs" />
+    <Compile Include="Generation\WorldLayer_Mountains.cs" />
+    <Compile Include="Generation\WorldLayer_SpecialBiomes.cs" />
+    <Compile Include="Utility\WorldMaterials.cs" />
+    <Compile Include="Utility\WorldRendererUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
