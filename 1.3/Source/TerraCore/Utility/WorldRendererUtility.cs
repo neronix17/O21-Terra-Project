@@ -18,19 +18,6 @@ namespace TerraCore
 
 		public static void DrawTileTangentialToPlanetWithRodation(WorldGrid grid, LayerSubMesh subMesh, int tileID, int atlasX, int atlasZ, IntVec2 texturesInAtlas, int rotDir)
 		{
-			//IL_0056: Unknown result type (might be due to invalid IL or missing references)
-			//IL_0061: Unknown result type (might be due to invalid IL or missing references)
-			//IL_0066: Unknown result type (might be due to invalid IL or missing references)
-			//IL_006a: Unknown result type (might be due to invalid IL or missing references)
-			//IL_0074: Unknown result type (might be due to invalid IL or missing references)
-			//IL_0079: Unknown result type (might be due to invalid IL or missing references)
-			//IL_0086: Unknown result type (might be due to invalid IL or missing references)
-			//IL_008b: Unknown result type (might be due to invalid IL or missing references)
-			//IL_0090: Unknown result type (might be due to invalid IL or missing references)
-			//IL_009a: Unknown result type (might be due to invalid IL or missing references)
-			//IL_009f: Unknown result type (might be due to invalid IL or missing references)
-			//IL_00dc: Unknown result type (might be due to invalid IL or missing references)
-			//IL_00de: Unknown result type (might be due to invalid IL or missing references)
 			int count = subMesh.verts.Count;
 			grid.GetTileVertices(tileID, tmpVerts);
 			int count2 = tmpVerts.Count;
